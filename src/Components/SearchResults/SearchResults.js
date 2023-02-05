@@ -1,6 +1,4 @@
-import React from 'react';
-import 
-
+import React from "react";
 
 export class SearchResults extends React.Component {
   constructor(props) {
