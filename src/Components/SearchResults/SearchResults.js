@@ -1,7 +1,8 @@
 import React from "react";
 import "./SearchResults.css";
+import TrackList from "../TrackList/TrackList";
 
-export class SearchResults extends React.Component {
+class SearchResults extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -9,8 +10,10 @@ export class SearchResults extends React.Component {
     return (
       <div className="SearchResults">
         <h2>Results</h2>
-        <TrackList />
+        <TrackList tracks={this.props.searchResults} />
       </div>
     );
   }
 }
+
+export default SearchResults;
