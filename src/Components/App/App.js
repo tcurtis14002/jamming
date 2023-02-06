@@ -64,8 +64,6 @@ class App extends React.Component {
     }
   }
 
-  removeTrack(track) {
-    this.setState;
   }
 
   render() {
