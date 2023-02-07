@@ -8,18 +8,20 @@ class Track extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
   }
 
-  addTrack(track) {
-    let tracks = this.state.playlistTracks;
-    if (tracks.find((savedTrack) => savedTrack.id === track.id)) {
-      return;
-    }
-    tracks.push(track);
-    this.setState({ playlistTracks: tracks });
+  addTrack() {
+    this.props.onAdd(this.props.track);
   }
 
+  removeTrack() {
+    this.props.onRemove(this.props.track);
+  }
   renderAction() {
     if (this.props.isRemoval) {
-      return <button className="Track-action">-</button>;
+      return (
+        <button className="Track-action" onClick={this.removeTrack}>
+          -
+        </button>
+      );
     } else {
       return (
         <button className="Track-action" onClick={this.addTrack}>
@@ -27,10 +29,6 @@ class Track extends React.Component {
         </button>
       );
     }
-  }
-
-  onRemove() {
-    this.props.onRemove(this.props.track);
   }
 
   render() {
